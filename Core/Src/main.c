@@ -271,15 +271,15 @@ static void MX_ADC1_Init(void)
   hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-  hadc1.Init.NbrOfConversion = 1;
+  hadc1.Init.NbrOfConversion = 3;
   hadc1.Init.DMAContinuousRequests = DISABLE;
   hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
   {
     Error_Handler();
   }
-  /**Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
-
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
   sConfig.Channel = ADC_CHANNEL_5;
   sConfig.Rank = 1;
   sConfig.SamplingTime = ADC_SAMPLETIME_28CYCLES;
@@ -288,7 +288,7 @@ static void MX_ADC1_Init(void)
     Error_Handler();
   }
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
-
+  */
   sConfig.Channel = ADC_CHANNEL_13;
   sConfig.Rank = 2;
   sConfig.SamplingTime = ADC_SAMPLETIME_84CYCLES;
@@ -297,7 +297,7 @@ static void MX_ADC1_Init(void)
     Error_Handler();
   }
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
-
+  */
   sConfig.Channel = ADC_CHANNEL_TEMPSENSOR;
   sConfig.Rank = 3;
   sConfig.SamplingTime = ADC_SAMPLETIME_112CYCLES;
@@ -305,7 +305,6 @@ static void MX_ADC1_Init(void)
   {
     Error_Handler();
   }
-  */
   /* USER CODE BEGIN ADC1_Init 2 */
 
   /* USER CODE END ADC1_Init 2 */
